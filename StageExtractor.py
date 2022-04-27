@@ -350,7 +350,7 @@ class StageExtractor(Extractor):
 
             if ranking == '1':
                 time_gap = '0:00'
-                finish_time = winner_finish_time.strip()
+                finish_time = winner_finish_time.strip() if winner_finish_time is not None else None
             elif ranking in SPECIAL_RANKING_RESULTS.keys():
                 time_gap, finish_time = None, None
             else:
