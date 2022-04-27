@@ -344,9 +344,9 @@ class StageExtractor(Extractor):
 
 
         else:
-            ranking = tds[headers_text.index('Rnk')].text.strip()
-            uci_points = tds[headers_text.index('UCI')].text.strip() if result_type != "Teams" else None
-            pcs_points = tds[headers_text.index('Pnt')].text.strip() if result_type != "Teams" else None
+            ranking = tds[headers_text.index('Rnk')].text.strip() if 'Rnk' in headers_text else None
+            uci_points = tds[headers_text.index('UCI')].text.strip() if (result_type != "Teams") and ('UCI' in headers_text) else None
+            pcs_points = tds[headers_text.index('Pnt')].text.strip() if (result_type != "Teams") and ('Pnt' in headers_text) else None
 
             if ranking == '1':
                 time_gap = '0:00'
@@ -558,8 +558,9 @@ class StageExtractor(Extractor):
             # Headers
             table_headers = results_table.find("thead").find_all("th")
             headers_text = [t.text for t in table_headers]
-            headers_list = STAGE_RESULT_PROPS[r_type] if r_type is not None else STAGE_RESULT_PROPS[stage['stage_type']]
-            self.validate_headers(headers_list, table_headers, stage['stage_link'],stage['stage_type'])
+            if (stage['stage_type'] is not None) and (str(stage['stage_type']) != 'nan'):
+                headers_list = STAGE_RESULT_PROPS[r_type] if r_type is not None else STAGE_RESULT_PROPS[stage['stage_type']]
+                self.validate_headers(headers_list, table_headers, stage['stage_link'],stage['stage_type'])
 
             # Records
             table_rows = results_table.find("tbody").find_all("tr")
