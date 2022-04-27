@@ -332,7 +332,7 @@ class StageExtractor(Extractor):
             time_gap = data_from_team['time_gap']
             finish_time = data_from_team['finish_time']
             additional_gap = row.find('span', attrs={'class': 'blue'})
-            if additional_gap is not None:
+            if (additional_gap is not None) and ('-' not in additional_gap.text) and ('+-' not in additional_gap.text):
                 time_gap_obj = StageExtractor.get_timedelta_from_string(time_gap)
                 finish_time_obj = StageExtractor.get_timedelta_from_string(finish_time)
                 additional_gap = additional_gap.text.split('+')[1]
@@ -723,7 +723,7 @@ class StageExtractor(Extractor):
 
     @staticmethod
     def get_file_path_with_new_suffix(file_path, suffix, file_format):
-        return f'{file_path.removesuffix(f".{file_format}")}_{suffix}.{file_format}'
+        return f'{file_path.replace(f".{file_format}","")}_{suffix}.{file_format}'
 
     @staticmethod
     # BUG in '-' and Team classification
