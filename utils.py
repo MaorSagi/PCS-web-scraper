@@ -5,7 +5,7 @@ import re
 import traceback
 from datetime import datetime, timedelta
 from pathlib import Path
-
+from unidecode import unidecode
 import pandas as pd
 
 from consts import *
@@ -96,7 +96,7 @@ def log(msg, type='INFO', id=''):
             msg += f' ERROR DETAILS: {traceback.format_exc()}'
         msg = f'{type}\t{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\t{msg}\n'
         with open(f'./log/{type}_{id}.log', 'a+') as f:
-            f.write(msg)
+            f.write(unidecode(msg))
         if debug and (LOG_LEVEL_DICT[type] >= LOG_LEVEL_DICT[debug]):
             print(f'{msg}'.replace("\n", ""))
 
