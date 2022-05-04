@@ -45,6 +45,7 @@ STAGE_RESULTS_CLASSES = {"Stage": "Stage",
 PCS_BASE_URL = "https://www.procyclingstats.com"
 RACES_DB_URL = f"{PCS_BASE_URL}/calendar/races-database"
 RACES_URL = f"{PCS_BASE_URL}/races.php"
+RANKINGS_URL = f'{PCS_BASE_URL}/rankings'
 RACE_CLASSES_TO_INCLUDE = ['1.UWT', '2.UWT', '1.Pro', '2.Pro', '1.HC', '2.HC', '1.1', '2.1']
 RACE_CLASSES_LEVELS = {
     'HARD': ['1.UWT', '2.UWT'], 'INTERMEDIATE': ['1.Pro', '2.Pro', '1.HC', '2.HC'], 'EASY': ['1.1', '1.2']
