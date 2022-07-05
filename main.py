@@ -65,7 +65,8 @@ if __name__ == '__main__':
     elif command == 'extract_stats':
         # exmple : -c extract_stats -ls https://www.procyclingstats.com/...
         extractor = StatExtractor(id=args['id'])
+        cyclists_df = get_df('cyclists')
         if years_range:
-            extractor.fetch_stats(years_range=years_range)
+            extractor.fetch_speciality_stats(cyclists_df, cyclist_last=args['last_session'],years_range=years_range)
         else:
-            extractor.fetch_stats()
+            extractor.fetch_speciality_stats(cyclists_df,cyclist_last=args['last_session'])

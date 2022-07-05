@@ -20,6 +20,8 @@ def check_int(sting):
 def check_float(sting):
     return re.match(r'^-?\d+(?:\.\d+)$', sting) is not None
 
+def get_file_path_with_new_suffix(file_path, suffix, file_format):
+        return f'{file_path.replace(f".{file_format}", "")}_{suffix}.{file_format}'
 
 def append_row_to_csv(file_path, row, columns=None):
     if columns == None:

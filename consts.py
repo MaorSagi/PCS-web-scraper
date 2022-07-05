@@ -1,5 +1,6 @@
 CSV_PATHS = dict(
     cyclists='./data/cyclists.csv',
+    cyclists_stats='./data/cyclists_stats.csv',
     teams='./data/teams.csv',
     cyclists_teams='./data/cyclists_teams.csv',
     stages='./data/stages.csv',
@@ -11,6 +12,8 @@ DEBUG = LOG_LEVEL
 LOG_LEVEL_DICT = {'ERROR': 2, 'WARNING': 1, 'INFO': 0}
 MISSING_TEAMS_IN_RESULTS_PATH = 'log/missing_teams_in_results.csv'
 MISSING_CYCLISTS_PATH = 'log/missing_cyclists.csv'
+MISSING_STAGES_PATH = 'log/missing_stages.csv'
+MISSING_RESULTS_PATH = 'log/missing_results.csv'
 MISSING_TEAMS_PATH = 'log/missing_teams.csv'
 MISSING_CYCLISTS_IN_TEAMS_PATH = 'log/missing_cyclists_in_teams.csv'
 
@@ -26,6 +29,8 @@ STAGETS_COLS = ['stage_id', 'race_id', 'race_name', 'race_date', 'stage_date', '
                 'temp_max', 'temp_min', '_1000_to_1500_m', '_1500_to_2000_m', '_2000_to_2500_m',
                 '_2500_to_3000_m', '_3000_to_3500_m', 'race_total_distance', 'race_total_elevation_gain'
                 ]
+
+SPECIALITY_COLS=['cyclist_id','date','speciality_type','stage_id','race_id','result_id','points']
 
 CYCLISTS_STAGES_RESULTS_COLS = ['result_id', 'result_type', 'cyclist_id', 'team_id', 'stage_id', 'race_id',
                                 'result_pcs_id', 'ranking', 'uci_points', 'pcs_points', 'finish_time', 'time_gap',
@@ -46,6 +51,7 @@ PCS_BASE_URL = "https://www.procyclingstats.com"
 RACES_DB_URL = f"{PCS_BASE_URL}/calendar/races-database"
 RACES_URL = f"{PCS_BASE_URL}/races.php"
 RANKINGS_URL = f'{PCS_BASE_URL}/rankings'
+
 RACE_CLASSES_TO_INCLUDE = ['1.UWT', '2.UWT', '1.Pro', '2.Pro', '1.HC', '2.HC', '1.1', '2.1']
 RACE_CLASSES_LEVELS = {
     'HARD': ['1.UWT', '2.UWT'], 'INTERMEDIATE': ['1.Pro', '2.Pro', '1.HC', '2.HC'], 'EASY': ['1.1', '1.2']
@@ -67,4 +73,11 @@ STAGE_RESULT_PROPS = {"One day race": ['Rnk', 'Rider', 'Team', 'UCI', 'Pnt', 'Ti
                       "Stage": ["Rnk", "Rider", "Team", "UCI", "Pnt", "Time"],
                       "Teams classification": ["Rnk", "Prev", "▼▲", "Team", "Class", "Time"],
                       "Team Time Trial": ["Pos.", "Team", "Time", "Timegap", "Speed", "PCS points", "UCI points"]
+                      }
+
+SPECIALITY_POINTS_TYPES = {'Sprint':'career-points-sprint',
+                      'Climber':'career-points-climbers',
+                      'GC':'career-points-gc',
+                      'Time Trial':'career-points-time-trial',
+                      'One Day Races': 'career-points-one-day-races',
                       }
