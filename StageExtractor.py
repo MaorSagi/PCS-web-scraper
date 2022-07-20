@@ -1,5 +1,7 @@
 import time
 
+import pandas as pd
+
 from CyclistTeamsExtractor import CyclistTeamsExtractor
 from Extractor import Extractor
 from utils import *
@@ -12,18 +14,18 @@ class StageExtractor(Extractor):
     def __init__(self, id=id):
         super().__init__(id=id)
 
-
     @staticmethod
     def get_stage_from_link(stage_link):
         global stages_df
-        stage = stages_df[stages_df['stage_link']==stage_link]
+        stage = stages_df[stages_df['stage_link'] == stage_link]
         if not stage.empty:
             return stage.iloc[0]
 
     @staticmethod
     def get_stage_result_from_link(stage_id, cyclist_id):
         stages_results_df = get_df('stages_results')
-        stage_result = stages_results_df[(stages_results_df['stage_id'] == stage_id) & (stages_results_df['cyclist_id'] == cyclist_id)]
+        stage_result = stages_results_df[
+            (stages_results_df['stage_id'] == stage_id) & (stages_results_df['cyclist_id'] == cyclist_id)]
         if not stage_result.empty:
             return stage_result.iloc[0]
 
@@ -162,7 +164,7 @@ class StageExtractor(Extractor):
             log(msg, 'ERROR', id=self.id)
 
     # TODO: overwrite handling
-    def stages_handler(self, soup, stage, overwrite,years_range=None):
+    def stages_handler(self, soup, stage, overwrite, years_range=None):
         global stages_df
         try:
             overwrite = overwrite if overwrite is not None else False
@@ -216,7 +218,9 @@ class StageExtractor(Extractor):
             stage_number = None
             if (stage_type == 'Stage') and (len(stage_name.split()) > 1):
                 stage_number = stage_name.split()[1].strip()
-            stage_link = f"{PCS_BASE_URL}/{option['value']}".replace('startlist/preview', '').replace('/startlist', '').replace('/result', '')
+            stage_link = f"{PCS_BASE_URL}/{option['value']}".replace('startlist/preview', '').replace('/startlist',
+                                                                                                      '').replace(
+                '/result', '')
             stage_exists = ((stages_df is not None) and (stage_link in stages_df['stage_link'].values))
             if stage_exists and (not overwrite):
                 continue
@@ -237,7 +241,8 @@ class StageExtractor(Extractor):
         msg = f'race {stage["race_link"]}'
         log(msg, 'INFO', id=self.id)
 
-    def fetch_race(self, race, table_headers, cont_pred, stage_last, overwrite, race_class=None, year=None, years_range=None):
+    def fetch_race(self, race, table_headers, cont_pred, stage_last, overwrite, race_class=None, year=None,
+                   years_range=None):
         global stages_df
         try:
             # race_link = None
@@ -331,7 +336,8 @@ class StageExtractor(Extractor):
                         for row in table_rows:
                             continue_last_session_pred = self.fetch_race(row, table_headers,
                                                                          continue_last_session_pred,
-                                                                         stage_last, overwrite, race_class, year, years_range)
+                                                                         stage_last, overwrite, race_class, year,
+                                                                         years_range)
                     except:
                         msg = f'Failed to parse stage {race_link}.'
                         log(msg, 'ERROR', id=self.id)
@@ -369,7 +375,6 @@ class StageExtractor(Extractor):
 
     def fetch_races_from_stages(self, years_range=range(2010, 2023), link_last=None, overwrite=None):
         global stages_df
-        team_program_url = None
         continue_last_session_pred = link_last is None
         for race_link, g in stages_df.groupby('race_link'):
             try:
@@ -402,10 +407,61 @@ class StageExtractor(Extractor):
                     race_date, _ = self.get_race_start_date(race_link, race_in_year_page)
                     race_nation = title_div.find('span')['class'][1]
                     self.fetch_stage_details(race_name, race_class, race_link, race_date, race_nation, overwrite,
-                                             oldest_link,years_range=years_range)
+                                             oldest_link, years_range=years_range)
                 if not g[g['race_oldest_pcs_link'].isna()].empty:
                     stages_df.loc[g.index, 'race_oldest_pcs_link'] = oldest_link
                     stages_df.to_csv(CSV_PATHS['stages'], header=True, index=False)
+            except:
+                msg = f'Failed to parse race {race_link}.'
+                log(msg, 'ERROR', id=self.id)
+                continue
+
+    def fetch_races_from_missing_stages(self, years_range=range(2016, 2023), link_last=None, overwrite=None):
+        global stages_df
+        missing_stages = pd.read_csv("log/missing_stages_extract_stats.csv")
+        continue_last_session_pred = link_last is None
+        race_link = None
+        for stage_link, g in missing_stages.groupby('pcs_link'):
+            try:
+                stage_url_splitted = stage_link.split('/')
+                year_idx = stage_url_splitted.index('race') + 2
+                race_link = "/".join(stage_url_splitted[:year_idx + 1])
+                if (not continue_last_session_pred) and (link_last != race_link):
+                    continue
+                continue_last_session_pred = True
+                if stage_link in stages_df['stage_link'].values:
+                    continue
+                msg = f'race {race_link}'
+                log(msg, 'INFO', id=self.id)
+                # if g[g['race_oldest_pcs_link'].isna()].empty:
+                #     continue
+                race_page = self.browser.get(race_link).soup
+                years_nav = race_page.select('div[class*="pageSelectNav"]')
+                # if len(years_nav) == 0:
+                #     stages_df.loc[g.index, 'race_oldest_pcs_link'] = race_link
+                years = years_nav[0].select('option')
+                if any([(not check_int(y.text)) or (int(y.text) not in range(1800, 2030)) for y in years]):
+                    raise ValueError(f'Expected years nav but got: {[y.text for y in years]}')
+                years_in_range = [y for y in years if int(y.text) in years_range]
+                oldest_link = f"{PCS_BASE_URL}/{years[-1]['value']}"
+                for year in years_in_range:
+                    year_link = f"{PCS_BASE_URL}/{year['value']}"
+                    race_in_year_page = self.browser.get(year_link).soup
+                    title_div = race_in_year_page.select('div[class*="main"]')[0]
+                    race_class_div = title_div.select('font')
+                    race_class = None
+                    if (len(race_class_div) > 0) and (race_class_div[-1].text.find('(') >= 0):
+                        race_class = race_class_div[-1].text[
+                                     race_class_div[-1].text.find('(') + 1:race_class_div[-1].text.find(')')]
+                    race_name = title_div.find('h1').text
+                    race_date, _ = self.get_race_start_date(race_link, race_in_year_page)
+                    race_nation = title_div.find('span')['class'][1]
+                    self.fetch_stage_details(race_name, race_class, race_link, race_date, race_nation, overwrite,
+                                             oldest_link, years_range=years_range)
+                # if not g[g['race_oldest_pcs_link'].isna()].empty:
+                stages_df = get_df('stages')
+                stages_df.loc[stages_df['race_link'] == race_link, 'race_oldest_pcs_link'] = oldest_link
+                stages_df.to_csv(CSV_PATHS['stages'], header=True, index=False)
             except:
                 msg = f'Failed to parse race {race_link}.'
                 log(msg, 'ERROR', id=self.id)
@@ -442,6 +498,7 @@ class StageExtractor(Extractor):
         result_args = (result_type, result_link, stage_id, team_id, cyclist_id)
         if self._is_result_exists(*result_args):
             return
+
         # results_df = get_df('stages_results')
         path = get_file_path_with_new_suffix(CSV_PATHS['stages_results'], self.id, 'csv')
         results_df = None
@@ -497,7 +554,6 @@ class StageExtractor(Extractor):
                               ['cyclist_name_pcs', 'pcs_link'])
         msg = f'Missing cyclist {cyclist_url}'
         log(msg, 'WARNING', id=self.id)
-
 
     def fetch_TTT_results(self, result_type, result_link, result_pcs_id, stage, headers_text, r_type,
                           winner_finish_time, time_idx, table_rows):
@@ -849,8 +905,6 @@ class StageExtractor(Extractor):
             return f"{str(minutes)}:{str(seconds).zfill(2)}"
         return f"{str(hours)}:{str(minutes).zfill(2)}:{str(seconds).zfill(2)}"
 
-
-
     @staticmethod
     # BUG in '-' and Team classification
     def get_timedelta_from_string(time_gap):
@@ -903,7 +957,7 @@ class StageExtractor(Extractor):
                               ['result_link', 'position'])
 
     def fetch_stage_details(self, race_name, race_class, race_link, race_date, race_nation, overwrite, oldest_link=None,
-                            race_page=None,years_range=None):
+                            race_page=None, years_range=None):
         global stages_df
         race_id = stages_df['race_id'].max() + 1 if stages_df is not None else 1
         race_name = unidecode(race_name)
@@ -919,7 +973,7 @@ class StageExtractor(Extractor):
             if len(race_page.select(
                     'div[class*="pageSelectNav"]')) > 1 and any(
                 [('Stage' in o.text) for o in race_page.find_all('option')]):
-                self.stages_handler(race_page, stage, overwrite,years_range)
+                self.stages_handler(race_page, stage, overwrite, years_range)
             else:
                 self.non_stage_handler(race_page, stage, overwrite)
             return
@@ -930,4 +984,4 @@ class StageExtractor(Extractor):
                     'div[class*="pageSelectNav"]')) < 2):
             self.non_stage_handler(race_page, stage, overwrite)
         else:
-            self.stages_handler(race_page, stage, overwrite,years_range=years_range)
+            self.stages_handler(race_page, stage, overwrite, years_range=years_range)

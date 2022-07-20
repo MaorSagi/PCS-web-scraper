@@ -130,6 +130,17 @@ class StatExtractor(Extractor):
                                 if not self._is_stat_exists(record):
                                     path = get_file_path_with_new_suffix(CSV_PATHS['cyclists_stats'], self.id, 'csv')
                                     append_row_to_csv(path, record, columns=SPECIALITY_COLS)
+                                elif (record['stage_id'] is not None) or (record['result_id'] is not None):
+                                    path = get_file_path_with_new_suffix(CSV_PATHS['cyclists_stats'], self.id, 'csv')
+                                    stats_df = pd.read_csv(path)
+                                    stat_exist_pred = (stats_df['cyclist_id'] == record['cyclist_id'])
+                                    date = datetime.strftime(record['date'], "%Y-%m-%d")
+                                    stat_exist_pred = stat_exist_pred & (stats_df['date'] == date)
+                                    stat_exist_pred = stat_exist_pred & (
+                                                stats_df['speciality_type'] == record['speciality_type'])
+
+
+
                             i += 1
 
 

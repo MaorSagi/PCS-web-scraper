@@ -52,6 +52,15 @@ if __name__ == '__main__':
         else:
             extractor.fetch_races_from_stages(link_last=args['last_session'], overwrite=overwrite)
 
+    elif command == 'extract_stages_from_missing_stages':
+        # exmple : -c extract_stages_from_stages -o 1 -d 1
+        extractor = StageExtractor(id=args['id'])
+        if years_range:
+            extractor.fetch_races_from_missing_stages(years_range=years_range,link_last=args['last_session'], overwrite=overwrite)
+        else:
+            extractor.fetch_races_from_missing_stages(link_last=args['last_session'], overwrite=overwrite)
+
+
     elif command == 'extract_stages_results':
         # exmple : -c extract_stages_results -ls https://www.procyclingstats.com/race/rund-um-koln/2007
         extractor = StageExtractor(id=args['id'])
