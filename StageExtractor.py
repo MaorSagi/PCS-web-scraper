@@ -724,7 +724,10 @@ class StageExtractor(Extractor):
                 elif result_type in ["Team Time Trial", "Individual Time Trial"]:
                     result_type_idx = result_tabs_text.index('')
                 elif result_type == "Prologue":
-                    result_type_idx = result_tabs_text.index('Prol.')
+                    if 'Prol.' in result_tabs_text:
+                        result_type_idx = result_tabs_text.index('Prol.')
+                    else:
+                        result_type_idx = result_tabs_text.index('Stage')
                 else:
                     raise ValueError(f'Unpredicted result type {result_type}')
                 result_a = result_tabs.find_all('li')[result_type_idx].find('a')
