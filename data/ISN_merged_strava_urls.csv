@@ -1,0 +1,108 @@
+cyclist_id,pcs_link,strava_link,strava_id,full_name,alon's_url,fetched_from_pcs,alon's_strava_id
+157,https://www.procyclingstats.com/rider/alessandro-de-marchi,https://www.strava.com/pros/9545283,9545283.0,DE MARCHI Alessandro,https://www.strava.com/pros/9545283,1.0,9545283.0
+190,https://www.procyclingstats.com/rider/alex-dowsett,https://www.strava.com/pros/505408,505408.0,DOWSETT Alex,https://www.strava.com/pros/505408,1.0,505408.0
+203,https://www.procyclingstats.com/rider/alexander-cataford,https://www.strava.com/athletes/3490359,3490359.0,CATAFORD Alexander,https://www.strava.com/athletes/3490359,1.0,3490359.0
+261,https://www.procyclingstats.com/rider/alexis-renard,https://www.strava.com/pros/5915515,5915515.0,RENARD Alexis,https://www.strava.com/pros/5915515,1.0,5915515.0
+329,https://www.procyclingstats.com/rider/andre-greipel,https://www.strava.com/pros/384548,384548.0,GREIPEL André,https://www.strava.com/pros/384548,1.0,384548.0
+613,https://www.procyclingstats.com/rider/august-jensen,https://www.strava.com/athletes/18311935,18311935.0,JENSEN August,https://www.strava.com/athletes/18311935,1.0,18311935.0
+653,https://www.procyclingstats.com/rider/ben-hermans,https://www.strava.com/athletes/593390,593390.0,HERMANS Ben,https://www.strava.com/athletes/593390,1.0,593390.0
+852,https://www.procyclingstats.com/rider/carl-fredrik-hagen,https://www.strava.com/pros/134614,134614.0,HAGEN Carl Fredrik,https://www.strava.com/pros/134614,1.0,134614.0
+1054,https://www.procyclingstats.com/rider/christopher-froome,https://www.strava.com/pros/7491815,7491815.0,FROOME Chris,https://www.strava.com/pros/7491815,1.0,7491815.0
+1093,https://www.procyclingstats.com/rider/clement-carisey,https://www.strava.com/athletes/1577875,1577875.0,CARISEY Clément,https://www.strava.com/athletes/1577875,1.0,1577875.0
+1113,https://www.procyclingstats.com/rider/conor-dunne,https://www.strava.com/athletes/759393,759393.0,DUNNE Conor,https://www.strava.com/athletes/759393,1.0,759393.0
+1116,https://www.procyclingstats.com/rider/corbin-strong,https://www.strava.com/athletes/3419730,3419730.0,STRONG Corbin,,1.0,
+1304,https://www.procyclingstats.com/rider/daryl-impey,https://www.strava.com/pros/1714205,1714205.0,IMPEY Daryl,https://www.strava.com/pros/1714205,1.0,1714205.0
+1403,https://www.procyclingstats.com/rider/davide-cimolai,https://www.strava.com/pros/20904837,20904837.0,CIMOLAI Davide,https://www.strava.com/pros/20904837,1.0,20904837.0
+1649,https://www.procyclingstats.com/rider/edwin-avila,https://www.strava.com/athletes/6094073,6094073.0,ÁVILA Edwin,https://www.strava.com/athletes/6094073,1.0,6094073.0
+2434,https://www.procyclingstats.com/rider/guillaume-boivin,https://www.strava.com/athletes/616061,616061.0,BOIVIN Guillaume,https://www.strava.com/athletes/616061,1.0,616061.0
+2457,https://www.procyclingstats.com/rider/guy-niv,https://www.strava.com/athletes/4748635,4748635.0,NIV Guy,https://www.strava.com/athletes/4748635,1.0,4748635.0
+2580,https://www.procyclingstats.com/rider/hugo-hofstetter,https://www.strava.com/athletes/10847439,10847439.0,HOFSTETTER Hugo,https://www.strava.com/athletes/10847439,1.0,10847439.0
+2581,https://www.procyclingstats.com/rider/hugo-houle,https://www.strava.com/pros/288769,288769.0,HOULE Hugo,,1.0,
+2759,https://www.procyclingstats.com/rider/james-piccoli,https://www.strava.com/pros/1703812,1703812.0,PICCOLI James,https://www.strava.com/pros/1703812,1.0,1703812.0
+2947,https://www.procyclingstats.com/rider/jenthe-biermans,https://www.strava.com/athletes/2305481,2305481.0,BIERMANS Jenthe,https://www.strava.com/athletes/2305481,1.0,2305481.0
+3328,https://www.procyclingstats.com/rider/jose-manuel-diaz-gallego,https://www.strava.com/athletes/3407398,3407398.0,DÍAZ José Manuel,https://www.strava.com/athletes/3407398,1.0,3407398.0
+3656,https://www.procyclingstats.com/rider/kristian-sbaragli,https://www.strava.com/athletes/2006007,2006007.0,SBARAGLI Kristian,https://www.strava.com/athletes/2006007,1.0,2006007.0
+3982,https://www.procyclingstats.com/rider/mads-wurtz-schmidt,https://www.strava.com/athletes/2109406,2109406.0,WÜRTZ SCHMIDT Mads,https://www.strava.com/athletes/2109406,1.0,2109406.0
+4372,https://www.procyclingstats.com/rider/matteo-badilatti,https://www.strava.com/athletes/4419459,4419459.0,BADILATTI Matteo,https://www.strava.com/athletes/4419459,1.0,4419459.0
+4407,https://www.procyclingstats.com/rider/matthias-brandle,https://www.strava.com/pros/266080,266080.0,BRÄNDLE Matthias,https://www.strava.com/pros/266080,1.0,266080.0
+4533,https://www.procyclingstats.com/rider/michael-woods,https://www.strava.com/pros/425147,425147.0,WOODS Michael,https://www.strava.com/pros/425147,1.0,425147.0
+4605,https://www.procyclingstats.com/rider/mihkel-raim,https://www.strava.com/pros/2469093,2469093.0,RÄIM Mihkel,https://www.strava.com/pros/2469093,1.0,2469093.0
+4804,https://www.procyclingstats.com/rider/nils-politt,https://www.strava.com/pros/2592883,2592883.0,POLITT Nils,https://www.strava.com/pros/2592883,1.0,2592883.0
+4865,https://www.procyclingstats.com/rider/omer-goldstein,https://www.strava.com/athletes/36281396,36281396.0,GOLDSTEIN Omer,https://www.strava.com/athletes/36281396,1.0,36281396.0
+5393,https://www.procyclingstats.com/rider/reto-hollenstein,https://www.strava.com/pros/19150197,19150197.0,HOLLENSTEIN Reto,https://www.strava.com/pros/19150197,1.0,19150197.0
+5428,https://www.procyclingstats.com/rider/rick-zabel,https://www.strava.com/pros/2557063,2557063.0,ZABEL Rick,https://www.strava.com/pros/2557063,1.0,2557063.0
+5654,https://www.procyclingstats.com/rider/rudy-barbier,https://www.strava.com/athletes/7019829,7019829.0,BARBIER Rudy,https://www.strava.com/athletes/7019829,1.0,7019829.0
+6163,https://www.procyclingstats.com/rider/taj-jones,https://www.strava.com/athletes/11516170,11516170.0,JONES Taj,https://www.strava.com/athletes/11516170,1.0,11516170.0
+6312,https://www.procyclingstats.com/rider/tom-van-asbroeck,https://www.strava.com/pros/387215,387215.0,VAN ASBROECK Tom,https://www.strava.com/pros/387215,1.0,387215.0
+6360,https://www.procyclingstats.com/rider/travis-mccabe,https://www.strava.com/athletes/367688,367688.0,MCCABE Travis,https://www.strava.com/athletes/367688,1.0,367688.0
+6686,https://www.procyclingstats.com/rider/zakkari-dempster,https://www.strava.com/athletes/365015,365015.0,DEMPSTER Zak,https://www.strava.com/athletes/365015,1.0,365015.0
+8063,https://www.procyclingstats.com/rider/patrick-schelling,https://www.strava.com/pros/1059089,1059089.0,SCHELLING Patrick,https://www.strava.com/pros/1059089,1.0,1059089.0
+8865,https://www.procyclingstats.com/rider/norman-vahtra,https://www.strava.com/athletes/28007299,28007299.0,VAHTRA Norman,https://www.strava.com/athletes/28007299,1.0,28007299.0
+9038,https://www.procyclingstats.com/rider/nicolas-sessler,https://www.strava.com/pros/644524,644524.0,SESSLER Nícolas,https://www.strava.com/pros/644524,1.0,644524.0
+10899,https://www.procyclingstats.com/rider/marko-pavlic,https://www.strava.com/pros/1003912,1003912.0,PAVLIČ Marko,,1.0,
+11599,https://www.procyclingstats.com/rider/roy-goldstein,https://www.strava.com/athletes/1492619,1492619.0,GOLDSTEIN Roy,https://www.strava.com/athletes/1492619,1.0,1492619.0
+11600,https://www.procyclingstats.com/rider/hamish-schreurs,https://www.strava.com/athletes/5943644,5943644.0,SCHREURS Hamish,https://www.strava.com/athletes/5943644,1.0,5943644.0
+11601,https://www.procyclingstats.com/rider/daniel-turek,https://www.strava.com/pros/2716222,2716222.0,TUREK Daniel,https://www.strava.com/pros/2716222,1.0,2716222.0
+11602,https://www.procyclingstats.com/rider/dennis-van-winden,https://www.strava.com/pros/2021447,2021447.0,VAN WINDEN Dennis,https://www.strava.com/pros/2021447,1.0,2021447.0
+11603,https://www.procyclingstats.com/rider/luis-lemus,https://www.strava.com/athletes/1150402,1150402.0,LEMUS Luis,https://www.strava.com/athletes/1150402,1.0,1150402.0
+11604,https://www.procyclingstats.com/rider/tyler-williams,https://www.strava.com/pros/174573,174573.0,WILLIAMS Tyler,https://www.strava.com/pros/174573,1.0,174573.0
+11617,https://www.procyclingstats.com/rider/marco-frigo,https://www.strava.com/pros/6913455,6913455.0,FRIGO Marco,,1.0,
+11618,https://www.procyclingstats.com/rider/derek-gee,https://www.strava.com/pros/5571896,5571896.0,GEE Derek,,1.0,
+11619,https://www.procyclingstats.com/rider/edo-goldstein,https://www.strava.com/athletes/2739223,2739223.0,GOLDSTEIN Edo,,1.0,
+11620,https://www.procyclingstats.com/rider/mason-hollyman,https://www.strava.com/athletes/12572856,12572856.0,HOLLYMAN Mason,,1.0,
+11621,https://www.procyclingstats.com/rider/oded-kogut,https://www.strava.com/athletes/3168759,3168759.0,KOGUT Oded,,1.0,
+11622,https://www.procyclingstats.com/rider/alastair-mackellar,https://www.strava.com/athletes/13429898,13429898.0,MACKELLAR Alastair,,1.0,
+11624,https://www.procyclingstats.com/rider/riley-pickrell,https://www.strava.com/athletes/8424173,8424173.0,PICKRELL Riley,,1.0,
+11626,https://www.procyclingstats.com/rider/rotem-tene,https://www.strava.com/athletes/10445770,10445770.0,TENE Rotem,,1.0,
+494,https://www.procyclingstats.com/rider/antonio-angulo,,,ANGULO Antonio,,,
+962,https://www.procyclingstats.com/rider/chris-butler,,,BUTLER Chris,,,
+1177,https://www.procyclingstats.com/rider/dan-martin,,,MARTIN Dan,,,
+1207,https://www.procyclingstats.com/rider/daniel-navarro,,,NAVARRO Daniel,,,
+2239,https://www.procyclingstats.com/rider/giacomo-nizzolo,,,NIZZOLO Giacomo,,,
+2460,https://www.procyclingstats.com/rider/guy-sagiv,,,SAGIV Guy,,,
+2671,https://www.procyclingstats.com/rider/itamar-einhorn,https://www.strava.com/athletes/5096617,5096617.0,EINHORN Itamar,https://www.strava.com/athletes/5096617,0.0,5096617.0
+2748,https://www.procyclingstats.com/rider/jakob-fuglsang,,,FUGLSANG Jakob,,,
+2836,https://www.procyclingstats.com/rider/jason-lowndes,https://www.strava.com/athletes/2009928,2009928.0,LOWNDES Jason,https://www.strava.com/athletes/2009928,0.0,2009928.0
+3666,https://www.procyclingstats.com/rider/krists-neilands,https://www.strava.com/pros/12243285,12243285.0,NEILANDS Krists,https://www.strava.com/pros/12243285,0.0,12243285.0
+4696,https://www.procyclingstats.com/rider/nathan-earle,https://www.strava.com/pros/1005431,1005431.0,EARLE Nathan,https://www.strava.com/pros/1005431,0.0,1005431.0
+4966,https://www.procyclingstats.com/rider/patrick-bevin,,,BEVIN Patrick,,,
+5625,https://www.procyclingstats.com/rider/rory-sutherland,,,SUTHERLAND Rory,,,
+5645,https://www.procyclingstats.com/rider/ruben-plaza,,,PLAZA Rubén,,,
+5799,https://www.procyclingstats.com/rider/sebastian-berwick,,,BERWICK Sebastian,,,
+5832,https://www.procyclingstats.com/rider/sep-vanmarcke,,,VANMARCKE Sep,,,
+5967,https://www.procyclingstats.com/rider/sondre-holst-enger,https://www.strava.com/athletes/4848740,4848740.0,ENGER Sondre Holst,https://www.strava.com/athletes/4848740,0.0,4848740.0
+6790,https://www.procyclingstats.com/rider/max-korus,,,KORUS Max,,,
+7027,https://www.procyclingstats.com/rider/freddy-ovett,https://www.strava.com/pros/9503563,9503563.0,OVETT Freddy,https://www.strava.com/pros/9503563,0.0,9503563.0
+8004,https://www.procyclingstats.com/rider/benjamin-perry,https://www.strava.com/athletes/812782,812782.0,PERRY Benjamin,https://www.strava.com/athletes/812782,0.0,812782.0
+8007,https://www.procyclingstats.com/rider/riccardo-minali,https://www.strava.com/athletes/15718993,15718993.0,MINALI Riccardo,https://www.strava.com/athletes/15718993,0.0,15718993.0
+8783,https://www.procyclingstats.com/rider/dan-craven,,,CRAVEN Dan,,,
+11288,https://www.procyclingstats.com/rider/simon-nagy,,,NAGY Simon,,,
+11297,https://www.procyclingstats.com/rider/lubos-malovec,,,MALOVEC Ľuboš,,,
+11310,https://www.procyclingstats.com/rider/mario-dasko,,,DAŠKO Mário,,,
+11480,https://www.procyclingstats.com/rider/bartosz-warchol,,,WARCHOŁ Bartosz,,,
+11597,https://www.procyclingstats.com/rider/yuval-ben-moshe,https://www.strava.com/athletes/3409968,3409968.0,BEN MOSHE Yuval,https://www.strava.com/athletes/3409968,0.0,3409968.0
+11598,https://www.procyclingstats.com/rider/awet-gebremedhin-andemeskel,,,GEBREMEDHIN Awet,,,
+11605,https://www.procyclingstats.com/rider/aviv-yechezkel,,,YECHEZKEL Aviv,,,
+11606,https://www.procyclingstats.com/rider/gabay-guy,,,GABAY Guy,,,
+11607,https://www.procyclingstats.com/rider/zohar-hadari,,,HADARI Zohar,,,
+11608,https://www.procyclingstats.com/rider/wociech-migdal,,,MIGDAł Wojciech,,,
+11609,https://www.procyclingstats.com/rider/emanuel-piaskowy,,,PIASKOWY Emanuel,,,
+11610,https://www.procyclingstats.com/rider/yoav-bear,,,BEAR Yoav,,,
+11611,https://www.procyclingstats.com/rider/ben-einhoren,,,EINHORN Ben,,,
+11612,https://www.procyclingstats.com/rider/patryk-talaga,,,TALAGA Patryk,,,
+11613,https://www.procyclingstats.com/rider/ido-zilberstein,,,ZILBERSTEIN Ido,,,
+11614,https://www.procyclingstats.com/rider/cole-kessler,,,KESSLER Cole,,,
+11615,https://www.procyclingstats.com/rider/jakub-boucek,,,BOUČEK Jakub,,,
+11616,https://www.procyclingstats.com/rider/lahav-davidzon,,,DAVIDZON Lahav,,,
+11623,https://www.procyclingstats.com/rider/aviv-peretz,,,PERETZ Aviv,,,
+11625,https://www.procyclingstats.com/rider/nadav-raisberg,,,RAISBERG Nadav,,,
+11627,https://www.procyclingstats.com/rider/roi-weinberg,,,WEINBERG Roi,,,
+11628,https://www.procyclingstats.com/rider/saned-abu-fares,,,ABU-FARES Saned,,,
+11629,https://www.procyclingstats.com/rider/shlomi-haimy,,,HAIMY Shlomi,,,
+11630,https://www.procyclingstats.com/rider/omer-lahav,,,LAHAV Omer,,,
+11631,https://www.procyclingstats.com/rider/robin-plamondon,,,PLAMONDON Robin,,,
+11632,https://www.procyclingstats.com/rider/yuval-zahor,,,ZAHOR Yuval,,,
+11633,https://www.procyclingstats.com/rider/ido-bear,,,BEAR Ido,,,
+11634,https://www.procyclingstats.com/rider/el-chokri,,,CHOKRI El Mehdi,,,
+11635,https://www.procyclingstats.com/rider/eitan-levi,,,LEVI Eitan,,,
+11636,https://www.procyclingstats.com/rider/carson-miles,,,MILES Carson,,,
